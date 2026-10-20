@@ -36,4 +36,6 @@ jobs:
           echo "Repository: ${{ github.repository}}"
           echo "Triggered by: ${{ github.actor}}"
           echo "Log Level: $LOGLEVEL"
+        env:
+          LOGLEVEL: ${{ inputs.logLevel }}
     
