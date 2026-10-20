@@ -1,0 +1,39 @@
+name: Testing manual workflow
+
+on: 
+  workflow_dispatch:
+    inputs:
+      homedrive:
+        description: 'The home drive of the machine'
+        required: true
+      logLevel:
+        description: 'Log Level'
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tag:
+        description: 'Apply tag'
+        required: true
+        type: boolean
+      environment:
+        description: 'Environment to run'
+        type: environment
+        required: true
+
+jobs:
+  security-scan:
+    name: Run security scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      - name: Show repository details
+        run: |
+          echo "Repository: ${{ github.repository}}"
+          echo "Triggered by: ${{ github.actor}}"
+          echo "Log Level: $LOGLEVEL"
+    
