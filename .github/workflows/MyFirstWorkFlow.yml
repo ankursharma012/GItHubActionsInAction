@@ -20,4 +20,4 @@ jobs:
           tree
           echo "::error file=MyFirstWorkFlow.yml,line=1,col=5,endColumn=7::Error in YAML file"
       - name: Print secret
-        run: echo "The secret is ${{ secrets.TEMP_TOKEN }}"
+        run: echo "The secret is ${{ secrets.TEMP_SECRET }}"
