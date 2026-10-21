@@ -18,3 +18,10 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       
+  job_publish:
+    name: Publish if main
+    if: ${{ github.ref == 'refs/head/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploiying branch ${{github.ref}}"
+    
