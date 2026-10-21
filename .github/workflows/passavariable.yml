@@ -1,0 +1,18 @@
+name: "Pass variables between steps and jobs"
+
+on: workflow_dispatch
+
+jobs:
+  set-and-pass-a-color:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set color
+        id: color-generator
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+
+      - name: Get Color
+        id: get-color
+        run: echo "The color set by last step is ${{steps.color-generator.outputs.SELECTED_COLOR}}"
+        
+      
+  
