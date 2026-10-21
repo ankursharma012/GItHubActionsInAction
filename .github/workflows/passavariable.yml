@@ -8,11 +8,16 @@ jobs:
     steps:
       - name: Set color
         id: color-generator
-        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+          echo "### Hello world :rocket:" >> $GITHUB_STEP_SUMMARY
 
       - name: Get Color
         id: get-color
-        run: echo "The color set by last step is ${{steps.color-generator.outputs.SELECTED_COLOR}}"
+        run: |
+          echo "The color set by last step is ${{steps.color-generator.outputs.SELECTED_COLOR}}"
+          echo "### <h1>Great feature</h1> :medal_sports:" >> $GITHUB_STEP_SUMMARY
+      
         
       
   
