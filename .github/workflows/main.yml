@@ -36,6 +36,6 @@ jobs:
           echo "Repository: ${{ github.repository}}"
           echo "Triggered by: ${{ github.actor}}"
           echo "Log Level: ${{ inputs.logLevel}}"
-          echo "::error file={name},line={line},endLine={el},title={title}::{message}"
+          echo "::error file={name},line={line},endLine={el},title=Security scan failed::Check action"
         
     
