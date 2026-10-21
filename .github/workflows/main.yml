@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "Repository: ${{ github.repository}}"
           echo "Triggered by: ${{ github.actor}}"
-          echo "Log Level: $LOGLEVEL"
-        env:
-          LOGLEVEL: ${{ inputs.logLevel }}
+          echo "Log Level: ${{ inputs.logLevel}}"
+          echo "::error file={name},line={line},endLine={el},title={title}::{message}"
+        
     
