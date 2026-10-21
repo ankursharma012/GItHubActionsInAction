@@ -21,4 +21,4 @@ jobs:
           echo "The repository ${{github.repository}} containe the following files:"
           echo "::debug::{THIS IS A BIG DEBUG MESSAGE}"
           tree
-      
+          echo "::error file=MyFirstWorkFlow.yml,line=1,col=5,endColumn=7::Error in YAML file"
